@@ -1,0 +1,16 @@
+<div *ngIf="todoItems.length > 0">
+  <ul>
+    <li 
+      *ngFor="let todo of todoItems; let i = index" 
+      [ngClass]="{'completed': todo.completed}">
+      {{todo.text}}
+      <button (click)="setAsCompleted(i)">Set As completed</button> 
+      <button (click)="removeItem(i)">Remove</button>
+      <button (click)="setAsPriority(todo)">Set As Priority</button>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="todoItems.length === 0">
+    No Todo items
+</div>
